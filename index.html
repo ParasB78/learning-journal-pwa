@@ -1,52 +1,23 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Temperature Converter</title>
-
-    <!-- Manifest -->
-    <link rel="manifest" href="manifest.json">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="converter.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Journal – Home</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<h1>Temperature Converter</h1>
+<div id="nav-container"></div>
 
-<form id="converter">
-    <label for="input-temp">Temperature</label>
-    <input type="text" id="input-temp" name="input-temp" value="20">
+<script src="js/script.js" defer></script>
 
-    <label for="input-unit">From</label>
-    <select id="input-unit" name="input-unit">
-        <option value="c" selected>Celsius</option>
-        <option value="f">Fahrenheit</option>
-        <option value="k">Kelvin</option>
-    </select>
-
-    <label for="output-unit">To</label>
-    <select id="output-unit" name="output-unit">
-        <option value="c">Celsius</option>
-        <option value="f" selected>Fahrenheit</option>
-        <option value="k">Kelvin</option>
-    </select>
-
-    <output id="output-temp">68 F</output>
-</form>
-
-<!-- JavaScript -->
-<script src="converter.js"></script>
-
-<!-- Service Worker -->
-<script>
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js");
-}
-</script>
+<header>
+    <h1>Welcome to My Learning Journal</h1>
+    <p>A place to track my Mobile App Development progress.</p>
+    <p id="dateBox"></p>
+</header>
 
 </body>
 </html>
