@@ -1,0 +1,19 @@
+{
+  "reflections": [
+    {
+      "id": 1,
+      "date": "2026-01-20",
+      "content": "Today I started Lab 5 - learning about JSON and Python for file-based data storage. This is different from localStorage because the data persists outside the browser."
+    },
+    {
+      "id": 2,
+      "date": "2026-01-20",
+      "content": "hello paras i am paras"
+    },
+    {
+      "id": 3,
+      "date": "2026-01-20",
+      "content": "hello paras are fine i am here to help you"
+    }
+  ]
+}

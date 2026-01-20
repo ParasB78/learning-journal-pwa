@@ -15,19 +15,51 @@
 <script src="js/storage.js" defer></script>
 <script src="js/browser.js" defer></script>
 <script src="js/thirdparty.js" defer></script>
+<script src="js/json-reflections.js" defer></script>
 
 <header>
     <h1>Weekly Journal Entries</h1>
 </header>
 
+<!-- JSON Reflections Section (Lab 5) -->
+<section class="json-section">
+    <h2>📁 Reflections from JSON Storage</h2>
+    <p class="section-desc">These reflections are loaded from <code>backend/reflections.json</code> - persistent storage outside the browser.</p>
+    
+    <!-- Extra Feature: Reflection Counter -->
+    <div class="stats-bar">
+        <span id="reflectionCounter">Loading...</span>
+    </div>
+    
+    <!-- Extra Feature: Search/Filter -->
+    <div class="filter-bar">
+        <input type="text" id="searchInput" placeholder="🔍 Search reflections by keyword...">
+        <input type="date" id="dateFilter" title="Filter by date">
+        <button id="clearFilterBtn">Clear Filters</button>
+    </div>
+    
+    <!-- Extra Feature: Export JSON -->
+    <div class="export-bar">
+        <button id="exportJsonBtn">📥 Export JSON</button>
+        <button id="refreshJsonBtn">🔄 Refresh Data</button>
+    </div>
+    
+    <!-- JSON Reflections Display -->
+    <div id="jsonReflections">
+        <p class="loading-msg">Loading reflections...</p>
+    </div>
+</section>
+
+<!-- Browser localStorage Section (Original) -->
 <section>
-    <h2>Add New Entry</h2>
+    <h2>💾 Browser Storage Entries</h2>
+    <p class="section-desc">These entries are saved in your browser's localStorage.</p>
     <textarea id="journalInput" placeholder="Write your entry..."></textarea>
     <button id="saveEntryBtn">Save Entry</button>
 </section>
 
 <section>
-    <h2>Saved Entries</h2>
+    <h2>Saved Entries (localStorage)</h2>
     <div id="savedEntries"></div>
     <button id="copyEntriesBtn">Copy All Entries</button>
 </section>
