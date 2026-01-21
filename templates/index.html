@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Journal – Home</title>
+
+    <!-- ✅ Flask static path -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+
+    <!-- PWA optional -->
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+
+  <body>
+    <div id="nav-container"></div>
+
+    <header>
+      <h1>Welcome to My Learning Journal</h1>
+      <p>A place to track my Mobile App Development progress.</p>
+      <p id="dateBox"></p>
+    </header>
+
+    <!-- ✅ Flask static path -->
+    <script
+      src="{{ url_for('static', filename='js/script.js') }}?v=999"
+      defer
+    ></script>
+  </body>
+</html>

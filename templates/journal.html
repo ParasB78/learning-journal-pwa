@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Journal – Journal</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+
+    <!-- PWA (optional but recommended) -->
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+
+  <body>
+    <div id="nav-container"></div>
+
+    <header>
+      <h1>Weekly Journal Entries</h1>
+    </header>
+
+    <!-- Lab 6: Flask API JSON Reflections -->
+    <section class="json-section">
+      <h2>📁 Reflections from Flask API (Lab 6)</h2>
+      <p class="section-desc">
+        These reflections are loaded via <code>GET /reflections</code> and saved
+        via <code>POST /add_reflection</code>. The server stores data in
+        <code>backend/reflections.json</code>.
+      </p>
+
+      <!-- Lab 6 Required: Add Reflection (POST) -->
+      <div class="add-reflection">
+        <h3>➕ Add a New Reflection</h3>
+
+        <form id="reflectionForm">
+          <textarea
+            id="newReflection"
+            placeholder="Write a new reflection (min 10 characters)..."
+            minlength="10"
+            required
+          ></textarea>
+          <button type="submit">Submit Reflection</button>
+        </form>
+
+        <p id="apiMsg" class="section-desc"></p>
+      </div>
+
+      <!-- Extra Feature: Reflection Counter -->
+      <div class="stats-bar">
+        <span id="reflectionCounter">Loading...</span>
+      </div>
+
+      <!-- Extra Feature: Search/Filter -->
+      <div class="filter-bar">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="🔍 Search reflections by keyword..."
+        />
+        <input type="date" id="dateFilter" title="Filter by date" />
+        <button id="clearFilterBtn" type="button">Clear Filters</button>
+      </div>
+
+      <!-- Extra Feature: Export + Refresh -->
+      <div class="export-bar">
+        <button id="exportJsonBtn" type="button">📥 Export JSON</button>
+        <button id="refreshJsonBtn" type="button">🔄 Refresh Data</button>
+      </div>
+
+      <!-- JSON Reflections Display -->
+      <div id="jsonReflections">
+        <p class="loading-msg">Loading reflections...</p>
+      </div>
+    </section>
+
+    <!-- Browser localStorage Section (Original) -->
+    <section>
+      <h2>💾 Browser Storage Entries</h2>
+      <p class="section-desc">
+        These entries are saved in your browser's localStorage.
+      </p>
+      <textarea id="journalInput" placeholder="Write your entry..."></textarea>
+      <button id="saveEntryBtn" type="button">Save Entry</button>
+    </section>
+
+    <section>
+      <h2>Saved Entries (localStorage)</h2>
+      <div id="savedEntries"></div>
+      <button id="copyEntriesBtn" type="button">Copy All Entries</button>
+    </section>
+
+    <section>
+      <h2>Third-Party API: YouTube Video</h2>
+      <div id="youtubeContainer"></div>
+    </section>
+
+    <!-- IMPORTANT: Scripts MUST be from Flask static -->
+    <script
+      src="{{ url_for('static', filename='js/script.js') }}?v=999"
+      defer
+    ></script>
+
+    <script
+      src="{{ url_for('static', filename='js/storage.js') }}"
+      defer
+    ></script>
+    <script
+      src="{{ url_for('static', filename='js/browser.js') }}"
+      defer
+    ></script>
+    <script
+      src="{{ url_for('static', filename='js/thirdparty.js') }}"
+      defer
+    ></script>
+    <script
+      src="{{ url_for('static', filename='js/json-reflections.js') }}"
+      defer
+    ></script>
+  </body>
+</html>
