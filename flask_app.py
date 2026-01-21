@@ -54,16 +54,20 @@ def projects():
 # Serve PWA files from root scope (important for SW + manifest)
 @app.route("/manifest.json")
 def manifest():
-    return send_from_directory(app.static_folder, "manifest.json")
+    response = send_from_directory(app.static_folder, "manifest.json")
+    response.headers["Cache-Control"] = "no-cache"
+    return response
 
 @app.route("/sw.js")
 def sw():
-    return send_from_directory(app.static_folder, "sw.js")
+    response = send_from_directory(app.static_folder, "sw.js")
+    response.headers["Cache-Control"] = "no-cache"
+    return response
 
-# Quick test route (optional but useful)
-@app.route("/health")
-def health():
-    return "OK", 200
+@app.route("/offline")
+def offline():
+    return render_template("offline.html")
+
 
 # ---------- API routes (Lab 6 required) ----------
 @app.route("/reflections", methods=["GET"])

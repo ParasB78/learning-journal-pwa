@@ -1,18 +1,22 @@
 {
-  "lang": "en-us",
-  "name": "Temperature Converter App",
-  "short_name": "TempConverter",
-  "description": "Convert between Celsius, Fahrenheit, and Kelvin",
+  "name": "Learning Journal",
+  "short_name": "Journal",
   "start_url": "/",
-  "background_color": "#2f3d58",
-  "theme_color": "#2f3d58",
-  "orientation": "any",
+  "scope": "/",
   "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
   "icons": [
     {
-      "src": "icon512.png",
+      "src": "/static/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/images/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "description": "A Learning Journal PWA with offline support and Flask backend."
 }

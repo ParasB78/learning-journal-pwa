@@ -3,18 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="apple-touch-icon" href="/static/images/icon-192.png" />
+
     <title>Learning Journal – Journal</title>
 
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
     />
-
-    <!-- PWA (optional but recommended) -->
-    <link rel="manifest" href="/manifest.json" />
   </head>
 
   <body>
+    <div
+      id="offlineBanner"
+      style="display: none; padding: 10px; margin: 10px 0"
+    >
+      You are offline. New reflections will sync when you are back online.
+    </div>
+
     <div id="nav-container"></div>
 
     <header>
@@ -97,26 +107,10 @@
     </section>
 
     <!-- IMPORTANT: Scripts MUST be from Flask static -->
-    <script
-      src="{{ url_for('static', filename='js/script.js') }}?v=999"
-      defer
-    ></script>
-
-    <script
-      src="{{ url_for('static', filename='js/storage.js') }}"
-      defer
-    ></script>
-    <script
-      src="{{ url_for('static', filename='js/browser.js') }}"
-      defer
-    ></script>
-    <script
-      src="{{ url_for('static', filename='js/thirdparty.js') }}"
-      defer
-    ></script>
-    <script
-      src="{{ url_for('static', filename='js/json-reflections.js') }}"
-      defer
-    ></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}?v=999" defer></script>
+    <script src="{{ url_for('static', filename='js/storage.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/browser.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/thirdparty.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/json-reflections.js') }}" defer></script>
   </body>
 </html>

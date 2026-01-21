@@ -1,8 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/static/manifest.json" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="apple-touch-icon" href="/static/images/icon-192.png" />
+
     <title>Learning Journal – About Me</title>
 
     <!-- ✅ Flask static path -->
@@ -28,7 +32,9 @@
     </section>
 
     <!-- ✅ Flask static path -->
-   <script src="{{ url_for('static', filename='js/script.js') }}?v=999" defer></script>
-
+    <script
+      src="{{ url_for('static', filename='js/script.js') }}?v=999"
+      defer
+    ></script>
   </body>
 </html>
